@@ -1,0 +1,24 @@
+{
+  "name": "md5_generator",
+  "version": "1.0.0",
+  "description": "i need a md5 '-'",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.18.1",
+    "md5": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valtervilmerson/md5_generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valtervilmerson/md5_generator/issues"
+  },
+  "homepage": "https://github.com/valtervilmerson/md5_generator#readme"
+}
