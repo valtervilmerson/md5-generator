@@ -1,7 +1,17 @@
-const md5 = require("md5")
-var qtdChar = 50
+const hash = require("md5")
+const config = require("./config.json")
 
-var hash = md5("")
+const limit = 50
 
+const password = ""
 
-console.log(hash.substring(0, qtdChar))
+function md5fier() {
+  firstStep = hash(config.value)
+  secondStep = hash(password)
+  thirdStep = firstStep + secondStep
+  fourthStep = hash(thirdStep)
+  newPassword = fourthStep.substring(0, limit)
+  console.log(newPassword)
+}
+
+md5fier()
