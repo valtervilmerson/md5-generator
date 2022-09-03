@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="md5.min.js"></script>
     <title>Login</title>
@@ -24,25 +28,31 @@
           <div class="text-field">
             <label for="entry1">Entry 1</label>
             <input
-              type="entry1"
+              type="text"
               name="entry1"
               placeholder="Entry 1"
               id="entry1"
             />
+            <div class="eye">
+              <i class="fa-solid fa-eye" id="show-password1"></i>
+            </div>
           </div>
           <div class="text-field">
             <label for="entry2">Entry 2</label>
             <input
-              type="entry2"
+              type="text"
               name="entry2"
               placeholder="Entry 2"
               id="entry2"
             />
+            <div class="eye">
+              <i class="fa-solid fa-eye" id="show-password2"></i>
+            </div>
           </div>
           <div class="text-field">
             <label for="limit">Output characters limit</label>
             <input
-              type="number"
+              type="password"
               placeholder="Limit of characters"
               name="limit"
               id="limit"
@@ -50,20 +60,50 @@
           </div>
           <div class="text-field">
             <label for="entry2">Hash</label>
-            <input type="hash" name="hash" placeholder="Hash" id="hash" />
+            <input type="text" name="hash" placeholder="Hash" id="hash" />
           </div>
           <button class="btn-login" id="run">Run</button>
         </div>
       </div>
     </div>
     <footer>
-      <a href="https://storyset.com/user">User illustrations by Storyset</a>
+      <a href="https://storyset.com/user">Illustrations by Storyset</a>
     </footer>
   </body>
   <script>
     var entry1 = ""
     var entry2 = ""
     var button = document.querySelector("button")
+    const showPassword1 = document.querySelector("#show-password1")
+    const showPassword2 = document.querySelector("#show-password2")
+    const passwordField1 = document.querySelector("#entry1")
+    const passwordField2 = document.querySelector("#entry2")
+
+    showPassword1.addEventListener("click", function () {
+      if (showPassword1.className == "fa-solid fa-eye") {
+        showPassword1.classList.remove("fa-eye")
+        showPassword1.classList.add("fa-eye-slash")
+      } else {
+        showPassword1.classList.remove("fa-eye-slash")
+        showPassword1.classList.add("fa-eye")
+      }
+      const type =
+        passwordField1.getAttribute("type") === "password" ? "text" : "password"
+      passwordField1.setAttribute("type", type)
+    })
+
+    showPassword2.addEventListener("click", function () {
+      if (showPassword2.className == "fa-solid fa-eye") {
+        showPassword2.classList.remove("fa-eye")
+        showPassword2.classList.add("fa-eye-slash")
+      } else {
+        showPassword2.classList.remove("fa-eye-slash")
+        showPassword2.classList.add("fa-eye")
+      }
+      const type =
+        passwordField2.getAttribute("type") === "password" ? "text" : "password"
+      passwordField2.setAttribute("type", type)
+    })
 
     function md5fier() {
       let limit = document.querySelector("#limit").value

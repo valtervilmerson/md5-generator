@@ -3,6 +3,7 @@
 body{
     margin:0;
     font-family: 'Noto Sans', sans-serif;
+    position: relative;
 }
 
 body * {
@@ -37,11 +38,13 @@ footer{
 .left-login > h1{
     color: #77ffc0;
     font-size: 3vw;
+    margin:0;
     
 }
 
 .left-login-img{
     width: 35vw;
+    height: 90vh;
 }
 
 .right-login{
@@ -77,6 +80,7 @@ footer{
     align-items: flex-start;
     justify-content: center;
     margin: 10px 0px;
+    position: relative;
 }
 
 .text-field > input{
@@ -92,6 +96,15 @@ footer{
     box-sizing: border-box;
 }
 
+.eye{
+    position: absolute;
+    color: lightgray;
+    top: 55%;
+    right: 5%;
+    text-align: right;
+}
+
+
 .text-field > label{
     color:#f0ffffde;
     margin-bottom: 10px;
@@ -100,6 +113,7 @@ footer{
 .text-field > input::placeholder{
     color: #f0ffff94;
 }
+
 
 .btn-login{
     width: 100%;
