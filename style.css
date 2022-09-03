@@ -149,7 +149,7 @@ footer{
         width: 90%;
     }
 
-    footer{
+    .left-login > footer{
         display: none;
     }
 
