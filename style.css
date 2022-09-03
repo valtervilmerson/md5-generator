@@ -149,6 +149,10 @@ footer{
         width: 90%;
     }
 
+    footer{
+        display: none;
+    }
+
 
     
 }
