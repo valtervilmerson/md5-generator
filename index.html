@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="md5.min.js"></script>
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="main-login">
+      <div class="left-login">
+        <h1>MD5 Generator</h1>
+        <img
+          src="md5generator.svg"
+          class="left-login-img"
+          alt="entry2 animation"
+        />
+      </div>
+      <div class="right-login">
+        <div class="card-login">
+          <h1>GENERATE</h1>
+          <div class="text-field">
+            <label for="entry1">Entry 1</label>
+            <input
+              type="entry1"
+              name="entry1"
+              placeholder="Entry 1"
+              id="entry1"
+            />
+          </div>
+          <div class="text-field">
+            <label for="entry2">Entry 2</label>
+            <input
+              type="entry2"
+              name="entry2"
+              placeholder="Entry 2"
+              id="entry2"
+            />
+          </div>
+          <div class="text-field">
+            <label for="limit">Output characters limit</label>
+            <input
+              type="number"
+              placeholder="Limit of characters"
+              name="limit"
+              id="limit"
+            />
+          </div>
+          <div class="text-field">
+            <label for="entry2">Hash</label>
+            <input type="hash" name="hash" placeholder="Hash" id="hash" />
+          </div>
+          <button class="btn-login" id="run">Run</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <a href="https://storyset.com/user">User illustrations by Storyset</a>
+    </footer>
+  </body>
+  <script>
+    var entry1 = ""
+    var entry2 = ""
+    var button = document.querySelector("button")
+
+    function md5fier() {
+      let limit = document.querySelector("#limit").value
+      entry1 = document.querySelector("#entry1").value
+      entry2 = document.querySelector("#entry2").value
+      firstStep = md5(entry1)
+      secondStep = md5(entry2)
+      thirdStep = firstStep + secondStep
+      fourthStep = md5(thirdStep)
+      newPassword = fourthStep.substring(0, limit)
+      document.querySelector("#hash").value = newPassword
+    }
+
+    button.onclick = function () {
+      md5fier()
+    }
+  </script>
+</html>
